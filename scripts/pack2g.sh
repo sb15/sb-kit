@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./../include/zip.sh
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../include/zip.sh"
 
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     echo "Использование: $0 <путь_к_папке> <имя_архива.zip>"
