@@ -8,15 +8,16 @@ check_zip_installed() {
     return 0
 }
 
-zip_pack_with_parts_2g() {
-
+zip_archive_with_parts_2g()
+{
     check_zip_installed || exit 1
 
+    local DIR
+    local BASENAME
     DIR=$(dirname "$1")
     BASENAME=$(basename "$1")
 
-    cd "$DIR" || exit 3
+    cd "$DIR" || exit 1
 
-    zip -q -r -s 2g "$2" "$BASENAME"
-    
+    zip -q -0 -r -s 2g "$2" "$BASENAME"
 }
