@@ -33,5 +33,5 @@ zip_archive_for_capsule()
 
     cd "$DIR" || exit 1
 
-    zip -q -r "$2" "$BASENAME"
+    zip -q -r -FS "$2" "$BASENAME"
 }
