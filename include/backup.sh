@@ -15,5 +15,5 @@ function backup_to_capsule
 
     BACKUP_CAPSULE="$BACKUP_CAPSULE_DIR/$filename.zip"
 
-    archive2g "$1" "$BACKUP_CAPSULE"
+    zip_archive_for_capsule "$1" "$BACKUP_CAPSULE"
 }

@@ -21,3 +21,17 @@ zip_archive_with_parts_2g()
 
     zip -q -0 -r -s 2g "$2" "$BASENAME"
 }
+
+zip_archive_for_capsule()
+{
+    check_zip_installed || exit 1
+
+    local DIR
+    local BASENAME
+    DIR=$(dirname "$1")
+    BASENAME=$(basename "$1")
+
+    cd "$DIR" || exit 1
+
+    zip -q -r "$2" "$BASENAME"
+}
