@@ -2,6 +2,8 @@
 
 function backup_to_capsule
 {
+    echo "$1 → $2"
+
     local DIR="$2"
 
     local prefix
