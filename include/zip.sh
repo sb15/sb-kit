@@ -31,18 +31,18 @@ zip_archive_for_capsule()
     DIR=$(dirname "$1")
     BASENAME=$(basename "$1")
 
+    cd "$DIR" || exit 1
+
     if [ "$3" = "sudo" ]; then
         local USER
         USER=$(whoami):$(id -gn)
 
-        echo USER
+        echo $USER
 
         sudo zip -q -r -FS "$2" "$BASENAME"
         sudo chown "${USER}" "$BASENAME"
     else
         zip -q -r -FS "$2" "$BASENAME"
     fi
-
-    cd "$DIR" || exit 1
 
 }
