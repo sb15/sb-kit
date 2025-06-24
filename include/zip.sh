@@ -37,10 +37,8 @@ zip_archive_for_capsule()
         local USER
         USER=$(whoami):$(id -gn)
 
-        echo $USER
-
         sudo zip -q -r -FS "$2" "$BASENAME"
-        sudo chown "${USER}" "$BASENAME"
+        sudo chown "${USER}" "$2"
     else
         zip -q -r -FS "$2" "$BASENAME"
     fi
